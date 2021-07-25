@@ -1,0 +1,39 @@
+.banner {
+  .producer-banner {
+    width: 100%;
+    border-radius: 0 0 30px 30px;
+  }
+
+  .producer-name {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 250px;
+    height: 80px;
+    margin: 0 auto;
+
+    font-size: 24px;
+    font-weight: 700;
+
+    background: #b4f8c8;
+    border-radius: 30px;
+
+    position: relative;
+    top: -50px;
+  }
+}
+
+.description {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+
+  width: calc(100% - 40px);
+  margin: 0 auto;
+  padding: 30px;
+
+  background: #eee;
+	border-radius: 10px;
+}
