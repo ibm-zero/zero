@@ -31,5 +31,9 @@
     ">0.2%",
     "not dead",
     "not op_mini all"
-  ]
+  ],
+  "devDependencies": {
+    "@iconify/icons-mdi-light": "^1.1.0",
+    "@iconify/react": "^1.1.4"
+  }
 }

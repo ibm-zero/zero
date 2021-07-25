@@ -1,19 +1,19 @@
 import { Button } from '../components/Button';
-import { Link } from 'react-router-dom';
-
+import { useHistory } from 'react-router-dom';
+import { useState } from 'react';
 import '../styles/login.scss';
 
 import logoImg from '../assets/images/logo.png';
-import { useState } from 'react';
+import googleIconImg from '../assets/images/google-icon.svg';
 
 export function Login() {
+  const history = useHistory();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
   function handleLogin(event) {
     event.preventDefault();
-
-    console.log('clicked login');
+    history.push('/map'); //mudar pra home
   }
 
   function handleForgotPassword() {
@@ -23,11 +23,15 @@ export function Login() {
   return (
     <div id='login-page'>
       <div className='container'>
-        <img src={logoImg} alt='Logo' />
+        <img src={logoImg} alt='Logo' id='logo-img' />
         <h1>Roots</h1>
-        <Button className='google-login'>Login with Google</Button>
+        <Button className='google-login'>
+          <img src={googleIconImg} alt='Logo da Google' />
+          Login with Google
+        </Button>
         <form onSubmit={handleLogin}>
           <input
+            type='email'
             placeholder='E-mail'
             value={email}
             onChange={(event) => {
@@ -36,6 +40,7 @@ export function Login() {
             }}
           />
           <input
+            type='password'
             placeholder='Password'
             value={password}
             onChange={(event) => {
@@ -43,9 +48,9 @@ export function Login() {
               console.log(password);
             }}
           />
-          <Link className='link' onClick={handleForgotPassword}>
+          <span className='link' onClick={handleForgotPassword}>
             Forgot your password?
-          </Link>
+          </span>
           <Button type='submit'>Login</Button>
         </form>
       </div>
