@@ -19,7 +19,35 @@ export function Producer() {
   let producerImg;
   let producerDescription;
   let producerAddress;
-  let productList;
+  const productList = [
+    {
+      productName: 'Pear',
+      productPrice: 2.25,
+      unit: 'Kg',
+      imgUrl:
+        'https://cdn.discordapp.com/attachments/865297431926931527/868900570071728148/unknown.png',
+    },
+    {
+      productName: 'Potato',
+      productPrice: 0.9,
+      unit: 'Kg',
+      imgUrl:
+        'https://cdn.discordapp.com/attachments/865297431926931527/868900504577654864/unknown.png',
+    },
+    {
+      productName: 'Peach',
+      productPrice: 1.85,
+      unit: 'Kg',
+      imgUrl:
+        'https://cdn.discordapp.com/attachments/865297431926931527/868897723129167892/unknown.png',
+    },
+    {
+      productName: 'Avocado',
+      productPrice: 1.5,
+      unit: 'Un',
+      imgUrl: 'https',
+    },
+  ];
   switch (partnerId) {
     case '1':
       producerImg = producerImg_1;
@@ -44,36 +72,6 @@ export function Producer() {
       producerName = 'Veggie Eggie';
       producerDescription = '$ - Vegetables ';
       producerAddress = '1099 Front Street - Anaheim - CA, 48548';
-      productList = [
-        {
-          productName: 'Pear',
-          productPrice: 2.25,
-          unit: 'Kg',
-          imgUrl:
-            'https://cdn.discordapp.com/attachments/865297431926931527/868900570071728148/unknown.png',
-        },
-        {
-          productName: 'Potato',
-          productPrice: 0.9,
-          unit: 'Kg',
-          imgUrl:
-            'https://cdn.discordapp.com/attachments/865297431926931527/868900504577654864/unknown.png',
-        },
-        {
-          productName: 'Peach',
-          productPrice: 1.85,
-          unit: 'Kg',
-          imgUrl:
-            'https://cdn.discordapp.com/attachments/865297431926931527/868897723129167892/unknown.png',
-        },
-        {
-          productName: 'Avocado',
-          productPrice: 1.5,
-          unit: 'Un',
-          imgUrl:
-            'https://cdn.discordapp.com/attachments/865297431926931527/868912847743225856/unknown.png',
-        },
-      ];
   }
 
   function handleBack() {

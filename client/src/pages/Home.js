@@ -1,15 +1,60 @@
-import { Button } from '../components/Button';
 import { useHistory } from 'react-router-dom';
 import { useState } from 'react';
-import '../styles/home.scss';
 import { Icon, InlineIcon } from '@iconify/react';
+import { Producer } from '../components/SingleProducer';
 
-import chatbotIcon from '../assets/images/chatboticon.png'
+import '../styles/home.scss';
+
+import chatbotIcon from '../assets/images/chatboticon.png';
 import accountIcon from '@iconify/icons-mdi-light/account';
 import clipboardText from '@iconify/icons-mdi-light/clipboard-text';
 import tagIcon from '@iconify/icons-mdi-light/tag';
 import clockIcon from '@iconify/icons-mdi-light/clock';
 import cartIcon from '@iconify/icons-mdi-light/cart';
+
+import producerImg_1 from '../assets/images/producer_1.jpg';
+import producerImg_2 from '../assets/images/producer_2.jpg';
+import producerImg_3 from '../assets/images/producer_3.jpg';
+import producerImg_4 from '../assets/images/producer_4.jpg';
+
+const mockProducers = [
+  {
+    id: 1,
+    name: "Arnaldo's Farm",
+    img: producerImg_1,
+    type: 'Organic Lettuce',
+  },
+  {
+    id: 2,
+    name: 'Fruit Ninjas',
+    img: producerImg_2,
+    type: 'Different Fruits',
+  },
+  {
+    id: 3,
+    name: 'Earth Family',
+    img: producerImg_3,
+    type: 'Organic Farm',
+  },
+  {
+    id: 4,
+    name: 'Veggie Eggie',
+    img: producerImg_4,
+    type: 'Organic Vegetables',
+  },
+  {
+    id: 1,
+    name: "Arnaldo's Farm",
+    img: producerImg_1,
+    type: 'Organic Lettuce',
+  },
+  {
+    id: 2,
+    name: 'Fruit Ninjas',
+    img: producerImg_2,
+    type: 'Different Fruits',
+  },
+];
 
 export function Home() {
   const history = useHistory();
@@ -38,57 +83,60 @@ export function Home() {
     history.push('/chatbot'); //goes to chatbot
   }
 
-    return (
-      <div id='home-page'>
-        <div className='container'>
-          <div name='happy-producer'>
-            NEXT TO YOU
-          </div>
-          <div className='menu-bar'>
-            <div>
-              <div className='profile-button'>
-                <Button onClick={handleProfile}>
-                  <Icon icon={accountIcon}/>
-                  Account
-                </Button>
-              </div>
-              <div className='grocery-button'>
-                <Button onClick={handleGroceryList}>
-                  <Icon icon={clipboardText}/>
-                  Grocery list
-                </Button>
-              </div>
+  return (
+    <div id='home-page'>
+      <div className='container'>
+        <div className='header'>Next to you</div>
+        <div className='producers-container'>
+          {mockProducers.map((producer) => (
+            <Producer producer={producer} />
+          ))}
+        </div>
+
+        <div className='menu-bar'>
+          <div>
+            <div className='profile-button'>
+              <button onClick={handleProfile}>
+                <Icon icon={accountIcon} />
+                Account
+              </button>
             </div>
-            <div>
-              <div className='promo-button'>
-                <Button onClick={handlePromo}>
-                  <Icon icon={tagIcon}/>
-                  Promo
-                </Button>
-              </div>
-              <div className='archive-button'>
-                <Button onClick={handleArchive}>
-                  <Icon icon={clockIcon}/>
-                  Archive
-                </Button>
-              </div>
+            <div className='grocery-button'>
+              <button onClick={handleGroceryList}>
+                <Icon icon={clipboardText} />
+                Grocery list
+              </button>
             </div>
           </div>
+          <div>
+            <div className='promo-button'>
+              <button onClick={handlePromo}>
+                <Icon icon={tagIcon} />
+                Promo
+              </button>
+            </div>
+            <div className='archive-button'>
+              <button onClick={handleArchive}>
+                <Icon icon={clockIcon} />
+                Archive
+              </button>
+            </div>
+          </div>
+        </div>
         <div name='static buttons'>
           <div className='shop-button'>
-            <Button onClick={handleShop}>
-              <Icon icon={cartIcon}/>
+            <button onClick={handleShop}>
+              <Icon icon={cartIcon} />
               Shop
-            </Button>
+            </button>
           </div>
           <div className='chatbot-button'>
-            <Button onClick={handleChatbot}>
-              <img src={chatbotIcon}/>
-            </Button>
+            <button onClick={handleChatbot}>
+              <img src={chatbotIcon} alt='Chatbot icon' />
+            </button>
           </div>
         </div>
-        </div>
       </div>
-    );
-
+    </div>
+  );
 }
