@@ -1,6 +1,7 @@
 import { Button } from '../components/Button';
 import { useHistory } from 'react-router-dom';
 import { useState } from 'react';
+import { Items } from '../components/Items';
 import '../styles/grocery.scss';
 
 import arrowLeftCircle from '../assets/images/back-btn.png';
@@ -23,7 +24,6 @@ export function Grocery() {
     }
 
     setItens(itens.concat(item));
-    console.log(itens);
     setNewItem("");
 
   };
@@ -52,7 +52,7 @@ export function Grocery() {
         </div>
         <div>
           {itens&&itens.map(item=><div> 
-              {item.name}
+              <Items item={item}/>
              </div>)}
         </div>
       </div>
