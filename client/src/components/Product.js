@@ -14,11 +14,11 @@ export function Product({ item }) {
 
   return (
     <div className='item-container'>
-      <div>
+      <div className='item-name'>
         <img src={item.imgUrl} alt='item' /> {item.productName}
       </div>
-      <div>${item.productPrice}</div>
-      <div>
+			<div className='item-price'>${item.productPrice}<span>per {item.unit}</span></div>
+      <div className='quantity'>
         <button onClick={handleDecrease}> - </button>
         <input
           value={quantity}
@@ -29,9 +29,8 @@ export function Product({ item }) {
           }}
         />
         <button onClick={handleIncrease}>+</button>
-        {item.unit}
       </div>
-      <div>
+      <div className='add-item'>
         <button>Add</button>
       </div>
     </div>

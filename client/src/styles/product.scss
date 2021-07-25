@@ -1,6 +1,7 @@
 .item-container {
-	margin: 40px 20px;
-	border-radius: 10px;
+  margin: 20px;
+	padding-bottom: 5px;
+  border-radius: 10px;
 
   background: #fff;
   display: grid;
@@ -11,5 +12,72 @@
     '. .'
     '. .';
   justify-items: center;
-	align-items: center;
+  align-items: center;
+
+  .item-name {
+    display: flex;
+    align-items: center;
+
+    width: 80%;
+
+    font-size: 20px;
+    font-weight: 600;
+
+    img {
+			margin-left: -5px;
+      height: 80px;
+      width: 80px;
+    }
+  }
+
+  .item-price {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    font-weight: 600;
+
+    span {
+      font-size: 12px;
+      font-weight: 300;
+    }
+  }
+
+  .quantity {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    padding-left: 20px;
+
+    button {
+      width: 40px;
+      height: 32px;
+      background: 0;
+      border: 2px solid #54436b;
+			border-radius: 10px;
+			font-weight: 700;
+    }
+
+    input {
+      width: calc(100% - 80px);
+      height: 32px;
+      text-align: center;
+			font-size: 18px;
+      border: 0;
+    }
+  }
+
+  .add-item {
+    button {
+      border: 0;
+			border-radius: 32px;
+
+			color: #fff;
+      background: #50cb93;
+			font-weight: 600;
+
+      width: 70px;
+			height: 32px;
+    }
+  }
 }

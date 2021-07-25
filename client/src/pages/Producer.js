@@ -67,10 +67,11 @@ export function Producer() {
             'https://cdn.discordapp.com/attachments/865297431926931527/868897723129167892/unknown.png',
         },
         {
-          productName: 'Lettuce',
+          productName: 'Avocado',
           productPrice: 1.5,
           unit: 'Un',
-          imgUrl: 'https',
+          imgUrl:
+            'https://cdn.discordapp.com/attachments/865297431926931527/868912847743225856/unknown.png',
         },
       ];
   }
@@ -93,9 +94,7 @@ export function Producer() {
         <p>{producerAddress}</p>
       </div>
       <div className='products-container'>
-        {productList.map((item) => (
-          <Product item={item} />
-        ))}
+        {productList && productList.map((item) => <Product item={item} />)}
       </div>
     </>
   );
