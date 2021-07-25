@@ -1,6 +1,7 @@
 const bcrypt = require('bcrypt');
 const usersRouter = require('express').Router();
 const User = require('../models/user');
+const Order = require('../models/order');
 
 usersRouter.get('/', async (request, response) => {
   const users = await User.find({});
@@ -24,6 +25,44 @@ usersRouter.post('/', async (request, response) => {
 	const savedUser = await user.save();
 	
   response.json(savedUser);
+});
+
+usersRouter.put('/grocery-list/:id', async (request, response) => {
+  const body = request.body;
+
+  const user = {
+      groceryList: [
+        {
+          productName: body.productName,
+          itWasBought: body.itWasBought,
+          quantity: body.quantity,
+          totalPrice: body.totalPrice,
+          groceryDate: body.groceryDate,
+        }
+    ]
+  };
+
+  User.findByIdAndUpdate(request.params.id, user, { new: true })
+    .then((updatedUser) => {
+      response.json(updatedUser);
+    })
+    .catch((error) => next(error));
+
+});
+
+usersRouter.put('/order/:id', async (request, response) => {
+  const body = request.body;
+
+  const order = {
+    order: body.orderId,
+  }
+
+  User.findByIdAndUpdate(request.params.id, user, { new: true })
+  .then((updatedUser) => {
+    response.json(updatedUser);
+  })
+  .catch((error) => next(error));
+
 });
 
 module.exports = usersRouter;
