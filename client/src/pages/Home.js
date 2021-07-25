@@ -71,8 +71,8 @@ export function Home() {
     history.push('/promo'); //goes to promo
   }
 
-  function handleArchive() {
-    history.push('/archive'); //goes to archive
+  function handleInventory() {
+    history.push('/inventory'); //goes to archive
   }
 
   function handleShop() {
@@ -116,7 +116,7 @@ export function Home() {
               </button>
             </div>
             <div className='archive-button'>
-              <button onClick={handleArchive}>
+              <button onClick={handleInventory}>
                 <Icon icon={clockIcon} />
                 Archive
               </button>
