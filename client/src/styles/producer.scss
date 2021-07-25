@@ -15,8 +15,9 @@
 
     font-size: 24px;
     font-weight: 700;
+    color: #fff;
 
-    background: #b4f8c8;
+    background: #54436b;
     border-radius: 30px;
 
     position: relative;
@@ -31,9 +32,21 @@
   gap: 20px;
 
   width: calc(100% - 40px);
-  margin: 0 auto;
+  margin: -20px auto 0;
   padding: 30px;
 
-  background: #eee;
-	border-radius: 10px;
+  background: #acffad;
+  border-radius: 10px;
+
+  > div {
+    font-weight: 600;
+    font-size: 18px;
+  }
+}
+
+.products-container {
+  background: #54436b;
+	margin: 60px 0;
+	padding: 20px;
+	border-radius: 30px;
 }

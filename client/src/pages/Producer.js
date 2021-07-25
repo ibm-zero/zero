@@ -8,6 +8,7 @@ import producerImg_4 from '../assets/images/producer_4.jpg';
 import arrowLeftCircle from '../assets/images/back-btn.png';
 
 import '../styles/producer.scss';
+import { Product } from '../components/Product';
 
 export function Producer() {
   const history = useHistory();
@@ -18,6 +19,7 @@ export function Producer() {
   let producerImg;
   let producerDescription;
   let producerAddress;
+  let productList;
   switch (partnerId) {
     case '1':
       producerImg = producerImg_1;
@@ -42,6 +44,35 @@ export function Producer() {
       producerName = 'Veggie Eggie';
       producerDescription = '$ - Vegetables ';
       producerAddress = '1099 Front Street - Anaheim - CA, 48548';
+      productList = [
+        {
+          productName: 'Pear',
+          productPrice: 2.25,
+          unit: 'Kg',
+          imgUrl:
+            'https://cdn.discordapp.com/attachments/865297431926931527/868900570071728148/unknown.png',
+        },
+        {
+          productName: 'Potato',
+          productPrice: 0.9,
+          unit: 'Kg',
+          imgUrl:
+            'https://cdn.discordapp.com/attachments/865297431926931527/868900504577654864/unknown.png',
+        },
+        {
+          productName: 'Peach',
+          productPrice: 1.85,
+          unit: 'Kg',
+          imgUrl:
+            'https://cdn.discordapp.com/attachments/865297431926931527/868897723129167892/unknown.png',
+        },
+        {
+          productName: 'Lettuce',
+          productPrice: 1.5,
+          unit: 'Un',
+          imgUrl: 'https',
+        },
+      ];
   }
 
   function handleBack() {
@@ -58,8 +89,13 @@ export function Producer() {
         <div className='producer-name'>{producerName}</div>
       </div>
       <div className='description'>
-        {producerDescription}
+        <div>{producerDescription}</div>
         <p>{producerAddress}</p>
+      </div>
+      <div className='products-container'>
+        {productList.map((item) => (
+          <Product item={item} />
+        ))}
       </div>
     </>
   );
