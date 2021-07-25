@@ -1,6 +1,7 @@
 const bcrypt = require('bcrypt');
 const partnersRouter = require('express').Router();
-const Parter = require('../models/parter');
+const Partner = require('../models/parter');
+const Order = require('../models/order');
 
 partnersRouter.get('/', async (request, response) => {
     const partners = await partnersRouter.find({});
@@ -45,6 +46,15 @@ partnersRouter.put('/:id', async (request, response) => {
 
     response.json(savedPartner);
 
+});
+
+partnerRouter.get('/:id', async (request, response) => {
+    const order = await Order.findById(id).populate('order');
+    if(order){
+        response.json(order);
+    } else { 
+        response.status(404).end();
+    }
 });
 
 module.exports = partnersRouter;
