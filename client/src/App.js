@@ -13,7 +13,7 @@ import { Chatbot } from './pages/Chatbot';
 function App() {
   useEffect(() => {
     setTimeout(() => {
-      window.confirm('Oi, sua batata ta podre');
+      window.confirm('Your cucumber expires in 2 days!');
     }, 10000);
 	}, []);
 	

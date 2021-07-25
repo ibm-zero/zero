@@ -45,7 +45,8 @@ export function Producer() {
       productName: 'Avocado',
       productPrice: 1.5,
       unit: 'Un',
-      imgUrl: 'https',
+      imgUrl:
+        'https://cdn.discordapp.com/attachments/865297431926931527/868912847743225856/unknown.png',
     },
   ];
   switch (partnerId) {

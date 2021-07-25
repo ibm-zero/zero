@@ -1,20 +1,17 @@
-import { useState } from "react";
+import { useState } from 'react';
 import '../styles/items.scss';
 
 export function Items({ item }) {
+  const [wasBought, setWasBought] = useState(item.bought);
 
   function handleBoughtItem() {
-    item.bought = !item.bought;
-    console.log(item.bought);
+    setWasBought(!wasBought)
   }
 
   return (
-    <div className='item-container'>
-      <div>
-          {item.name}
-          <input type='checkbox' onChange={handleBoughtItem} />
-      </div>
+    <div className={`item ${wasBought ? 'border-on' : ''}`}>
+      {item.name}
+      <input type='checkbox' onChange={handleBoughtItem} />
     </div>
   );
-
 }

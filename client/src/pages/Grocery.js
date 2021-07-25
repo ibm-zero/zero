@@ -1,4 +1,4 @@
-import { Button } from '../components/Button';
+import { Button as button } from '../components/Button';
 import { useHistory } from 'react-router-dom';
 import { useState } from 'react';
 import { Items } from '../components/Items';
@@ -39,14 +39,14 @@ export function Grocery() {
   return (
     <div id='grocery-page'>
       <div className='container'>
-        <Button onClick={handleBack}>
-          <img src={arrowLeftCircle}/>
-        </Button> 
+        <button className='back-btn' onClick={handleBack}>
+          <img src={arrowLeftCircle} alt='back'/>
+        </button> 
         <div>
           <form onSubmit={handleAddField}>
-            <input placeholder='type your groceries here' onChange={handleInput} value={newItem}/>
+            <input placeholder='Type your groceries here' onChange={handleInput} value={newItem}/>
             <button type='submit'>
-              +
+              Add
             </button>
           </form>
         </div>
