@@ -13,7 +13,7 @@ export function Login() {
 
   function handleLogin(event) {
     event.preventDefault();
-    history.push('/map'); //mudar pra home
+    history.push('/home'); // goes to home
   }
 
   function handleForgotPassword() {
