@@ -3,7 +3,7 @@ const usersRouter = require('express').Router();
 const User = require('../models/user');
 const Order = require('../models/order');
 
-usersRouter.get('/', async (request, response) => {
+usersRouter.get('/', async (response) => {
   const users = await User.find({});
   response.json(users);
 });
@@ -48,6 +48,15 @@ usersRouter.put('/grocery-list/:id', async (request, response) => {
     })
     .catch((error) => next(error));
 
+});
+
+userRouter.get('/:id', async (request, response) => {
+  const order = await Order.findById(id).populate('order');
+  if(order){
+      response.json(order);
+  } else { 
+      response.status(404).end();
+  }
 });
 
 usersRouter.put('/order/:id', async (request, response) => {
