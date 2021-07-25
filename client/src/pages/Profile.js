@@ -5,7 +5,7 @@ import { useHistory } from 'react-router-dom';
 import clockIcon from '@iconify/icons-mdi-light/clock'
 import arrowLeftCircle from '../assets/images/back-btn.png';
 
-export function Chatbot() {
+export function Profile() {
     const history = useHistory();
     function handleBack() {
         history.push('/home');
