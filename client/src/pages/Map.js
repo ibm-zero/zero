@@ -39,7 +39,7 @@ export function Map() {
 
   return (
     <>
-      <button id='back-btn' onClick={handleBack}>
+      <button className='back-btn' onClick={handleBack}>
         <img src={arrowLeftCircle} alt='back' />
       </button>
       <div id='page-map'>
