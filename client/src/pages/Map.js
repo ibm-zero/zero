@@ -10,6 +10,7 @@ import { Icon, InlineIcon } from '@iconify/react';
 import magnifyIcon from '@iconify/icons-mdi-light/magnify';
 import arrowLeftCircle from '../assets/images/back-btn.png';
 import mapPin from '../assets/images/pin.png';
+import { useHistory } from 'react-router-dom';
 
 const mapPinIcon = L.icon({
   iconUrl: mapPin,
@@ -19,12 +20,26 @@ const mapPinIcon = L.icon({
 });
 
 // posição que o mapa é inicializado
-const initialPosition = { lat: -25.441105, lng: -49.276855 };
+const initialPosition = { lat: -25.441105, lng: -49.236855 };
+
+const markerArray = [
+  { lat: -25.441105, lng: -49.216855 },
+  { lat: -25.401105, lng: -49.225855 },
+  { lat: -25.411105, lng: -49.242855 },
+  { lat: -25.421105, lng: -49.236155 },
+  { lat: -25.431105, lng: -49.256855 },
+];
 
 export function Map() {
+  const history = useHistory();
+
+  function handleBack() {
+    history.push('/home');
+  }
+
   return (
     <>
-      <button id='back-btn'>
+      <button id='back-btn' onClick={handleBack}>
         <img src={arrowLeftCircle} alt='back' />
       </button>
       <div id='page-map'>
@@ -37,9 +52,11 @@ export function Map() {
           <TileLayer
             url={`https://api.mapbox.com/styles/v1/mapbox/light-v10/tiles/256/{z}/{x}/{y}@2x?access_token=${process.env.REACT_APP_ACCESS_TOKEN_MAP_BOX}`}
           />
-          <Marker icon={mapPinIcon} position={initialPosition}>
-            <Popup>Hi</Popup>
-          </Marker>
+          {markerArray.map((item) => (
+            <Marker icon={mapPinIcon} position={item}>
+              <Popup>Hi</Popup>
+            </Marker>
+          ))}
         </MapContainer>
       </div>
       <form className='map-search'>
