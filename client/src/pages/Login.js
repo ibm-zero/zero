@@ -52,6 +52,7 @@ export function Login() {
           </span>
           <Button type='submit'>Login</Button>
         </form>
+        <a className='partner' href='https://forms.gle/Nkx1vVCvGbUegCs87' target='_blank' > Want to be our partner? </a>
       </div>
     </div>
   );
