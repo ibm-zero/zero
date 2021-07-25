@@ -4,7 +4,7 @@ import { useState } from 'react';
 import '../styles/login.scss';
 
 import logoImg from '../assets/images/roots-logo-white';
-import googleIconImg from '../assets/images/google-icon.svg';
+import googleIconImg from '../assets/images/google-color.png';
 
 export function Login() {
   const history = useHistory();
