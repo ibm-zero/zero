@@ -4,7 +4,8 @@ import { Login } from './pages/Login';
 import { Home } from './pages/Home';
 import { Map } from './pages/Map';
 import { Producer } from './pages/Producer';
-
+import { Grocery } from './pages/Grocery';
+ 
 function App() {
   useEffect(() => {
     setTimeout(() => {
@@ -18,6 +19,7 @@ function App() {
         <Route path='/' exact component={Login} />
         <Route path='/home' component={Home} />
         <Route path='/map' exact component={Map} />
+        <Route path='/grocery' component={Grocery} />
         <Route path='/producer/:id' exact component={Producer} />
       </Switch>
     </BrowserRouter>

@@ -14,27 +14,27 @@ import cartIcon from '@iconify/icons-mdi-light/cart';
 export function Home() {
   const history = useHistory();
 
-  function handleProfile(event) {
+  function handleProfile() {
     history.push('/profile'); //goes to profile
   }
 
-  function handleGroceryList(event) {
+  function handleGroceryList() {
     history.push('/grocery'); //goes to grocery list
   }
 
-  function handlePromo(event) {
+  function handlePromo() {
     history.push('/promo'); //goes to promo
   }
 
-  function handleArchive(event) {
+  function handleArchive() {
     history.push('/archive'); //goes to archive
   }
 
-  function handleShop(event) {
+  function handleShop() {
     history.push('/map'); //goes to map
   }
 
-  function handleChatbot(event) {
+  function handleChatbot() {
     history.push('/chatbot'); //goes to chatbot
   }
 
