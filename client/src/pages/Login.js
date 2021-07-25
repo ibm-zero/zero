@@ -3,7 +3,7 @@ import { useHistory } from 'react-router-dom';
 import { useState } from 'react';
 import '../styles/login.scss';
 
-import logoImg from '../assets/images/logo.png';
+import logoImg from '../assets/images/roots-logo-white';
 import googleIconImg from '../assets/images/google-icon.svg';
 
 export function Login() {
@@ -24,7 +24,6 @@ export function Login() {
     <div id='login-page'>
       <div className='container'>
         <img src={logoImg} alt='Logo' id='logo-img' />
-        <h1>Roots</h1>
         <Button className='google-login'>
           <img src={googleIconImg} alt='Logo da Google' />
           Login with Google

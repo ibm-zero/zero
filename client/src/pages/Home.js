@@ -42,6 +42,7 @@ export function Home() {
       <div id='home-page'>
         <div className='container'>
           <div name='happy-producer'>
+            NEXT TO YOU
           </div>
           <div className='menu-bar'>
             <div>
